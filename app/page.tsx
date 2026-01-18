@@ -161,7 +161,7 @@ const experiences: Experience[] = [
     company: "Homiee",
     role: "Full Stack Developer",
     location: "Australia (Remote)",
-    period: "Feb 2025 – Present",
+    period: "Feb 2025 – Jan 2026",
     description: [
       "Architecting a scalable real estate platform serving the Australian market.",
       "Building high-performance property search engines with sub-100ms latency.",
