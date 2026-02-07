@@ -135,14 +135,14 @@ const projects: Project[] = [
     icon: Smartphone,
     featured: true
   },
-  {
-    title: "Google Business Reviews",
-    description: "Microservices-based analytics dashboard aggregating GMB data to provide actionable business reputation insights in real-time.",
-    tags: ["Golang", "Gin", "Next.js", "Docker"],
-    link: "https://gmbrevs.com/",
-    isPrivate: true,
-    icon: Database
-  },
+  // {
+  //   title: "Google Business Reviews",
+  //   description: "Microservices-based analytics dashboard aggregating GMB data to provide actionable business reputation insights in real-time.",
+  //   tags: ["Golang", "Gin", "Next.js", "Docker"],
+  //   link: "https://gmbrevs.com/",
+  //   isPrivate: true,
+  //   icon: Database
+  // },
   {
     title: "Homiee",
     description: "Australian real estate marketplace featuring complex search filters, agent dashboards, and property listing management workflows.",
@@ -150,13 +150,13 @@ const projects: Project[] = [
     isPrivate: true,
     icon: Globe
   },
-  {
-    title: "Elobbs Jobs",
-    description: "High-throughput job board handling 100k+ listings with optimized PostgreSQL indexing and a secure application tracking system.",
-    tags: ["NestJS", "TypeScript", "Redis", "Docker"],
-    isPrivate: true,
-    icon: Briefcase
-  },
+  // {
+  //   title: "Elobbs Jobs",
+  //   description: "High-throughput job board handling 100k+ listings with optimized PostgreSQL indexing and a secure application tracking system.",
+  //   tags: ["NestJS", "TypeScript", "Redis", "Docker"],
+  //   isPrivate: true,
+  //   icon: Briefcase
+  // },
   {
     title: "Notesai",
     description: "Serverless note-taking app demonstrating modern architecture patterns with prisma-based data access and edge computing.",
