@@ -25,7 +25,8 @@ import {
   Layers,
   Bot,
   Cloud,
-  Network
+  Network,
+  ShoppingBag
 } from 'lucide-react';
 
 // --- Types ---
@@ -101,6 +102,15 @@ const techStacks: TechStack[] = [
 
 const projects: Project[] = [
   {
+    title:"Shop Web App",
+    description:"Shop-Web is a modern full-stack e-commerce platform engineered to deliver a high-performance, premium shopping experience by prioritizing clean UI/UX, scalability, and production-ready architecture.",
+    tags:["HonoJS", "PostgreSQL", "NextJS","Typescript", "TailwindCSS"],
+    link: "https://myshop-enichip.vercel.app/",
+    icon: ShoppingBag,
+    featured: true,
+    isPrivate: false
+  },
+  {
     title: "AudienceAce",
     description: "AI-powered lead generation utilizing NLP to scan social platforms (Reddit, LinkedIn) for high-intent buyer signals and automate outreach.",
     tags: ["AI Agents", "NestJS", "HonoJS", "Python", "LLMs"],
@@ -161,13 +171,13 @@ const experiences: Experience[] = [
     company: "Homiee",
     role: "Full Stack Developer",
     location: "Australia (Remote)",
-    period: "Feb 2025 – Jan 2026",
+    period: "Feb 2025 – Present",
     description: [
       "Architecting a scalable real estate platform serving the Australian market.",
       "Building high-performance property search engines with sub-100ms latency.",
       "Developing agent-facing dashboards for property management and analytics."
     ],
-    tech: ["Next.js", "Node.js", "MongoDB", "AWS"]
+    tech: ["Next.js", "Node.js", "MongoDB", "AWS", "Python"]
   },
   {
     company: "Elobbs Technologies",
