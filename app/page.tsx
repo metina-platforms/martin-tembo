@@ -118,7 +118,7 @@ const projects: Project[] = [
     link: "https://myshop-enichip.vercel.app/",
     icon: ShoppingBag,
     featured: true,
-    isPrivate: false
+    isPrivate: true
   },
   {
     title: "AudienceAce",
@@ -143,16 +143,17 @@ const projects: Project[] = [
     tags: ["Next.js", "FastAPI", "TensorFlow", "PostgreSQL"],
     github: "https://github.com/metina-platforms/metibuy-client",
     icon: Smartphone,
-    featured: true
+    featured: true,
+    isPrivate: false
   },
-  // {
-  //   title: "Google Business Reviews",
-  //   description: "Microservices-based analytics dashboard aggregating GMB data to provide actionable business reputation insights in real-time.",
-  //   tags: ["Golang", "Gin", "Next.js", "Docker"],
-  //   link: "https://gmbrevs.com/",
-  //   isPrivate: true,
-  //   icon: Database
-  // },
+  {
+    title: "Google Business Reviews",
+    description: "Microservices-based analytics dashboard aggregating GMB data to provide actionable business reputation insights in real-time.",
+    tags: ["Golang", "Gin", "Next.js", "Docker"],
+    link: "https://gmbrevs.com/",
+    isPrivate: true,
+    icon: Database
+  },
   {
     title: "Homiee",
     description: "Australian real estate marketplace featuring complex search filters, agent dashboards, and property listing management workflows.",
