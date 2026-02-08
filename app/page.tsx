@@ -97,7 +97,7 @@ const techStacks: TechStack[] = [
   {
     category: "System Design",
     icon: Network,
-    skills: ["Domain Driven Design", "MVC Patterns", "Microservices", "Modular Architecture"]
+    skills: ["MVC Patterns", "Microservices", "Modular Architecture"]
   }
 ];
 
@@ -300,8 +300,8 @@ const TechStackCard = ({ stack }: { stack: TechStack }) => {
     <motion.div
       variants={fadeInUp}
       className={`p-6 rounded-2xl border backdrop-blur-sm bg-slate-900/40 flex flex-col h-full hover:bg-slate-800/40 transition-colors duration-300 ${stack.highlight
-          ? 'border-cyan-500/30 shadow-[0_0_15px_rgba(6,182,212,0.1)]'
-          : 'border-white/5 hover:border-white/10'
+        ? 'border-cyan-500/30 shadow-[0_0_15px_rgba(6,182,212,0.1)]'
+        : 'border-white/5 hover:border-white/10'
         }`}
     >
       <div className="flex items-center gap-3 mb-4">
@@ -317,8 +317,8 @@ const TechStackCard = ({ stack }: { stack: TechStack }) => {
           <span
             key={skill}
             className={`text-xs px-2 py-1 rounded border ${stack.highlight
-                ? 'bg-cyan-950/50 border-cyan-900/50 text-cyan-200'
-                : 'bg-slate-950/50 border-slate-800 text-slate-400'
+              ? 'bg-cyan-950/50 border-cyan-900/50 text-cyan-200'
+              : 'bg-slate-950/50 border-slate-800 text-slate-400'
               }`}
           >
             {skill}
