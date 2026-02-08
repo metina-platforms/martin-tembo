@@ -26,7 +26,8 @@ import {
   Bot,
   Cloud,
   Network,
-  ShoppingBag
+  ShoppingBag,
+  CalendarCheck
 } from 'lucide-react';
 
 // --- Types ---
@@ -101,6 +102,24 @@ const techStacks: TechStack[] = [
 ];
 
 const projects: Project[] = [
+{
+  "title": "MeetingFlow",
+  "description": "MeetingFlow is an AI-powered meeting productivity platform designed to turn meetings into progress engines by ensuring agendas, tracking decisions, assigning action items, and integrating seamlessly with your existing tools.",
+  "tags": ["AI","Productivity","Meetings","Calendar Integration","Action Tracking","Team Tools", "AWS"],
+  "link": "https://meetingflow.vercel.app/",
+  "icon": "CalendarCheck", 
+  "featured": false,
+  "isPrivate": true
+},
+{
+  "title": "MeetingFlow",
+  "description": "MeetingFlow is an AI-powered meeting productivity platform designed to turn meetings into progress engines by ensuring agendas, tracking decisions, assigning action items, and integrating seamlessly with your existing tools.",
+  "tags": ["AI","Productivity","Meetings","Calendar Integration","Action Tracking","Team Tools"],
+  "link": "https://meetingflow.vercel.app/",
+  "icon": "CalendarCheck", 
+  "featured": false,
+  "isPrivate": false
+},
   {
     title:"Shop Web App",
     description:"Shop-Web is a modern full-stack e-commerce platform engineered to deliver a high-performance, premium shopping experience by prioritizing clean UI/UX, scalability, and production-ready architecture.",
