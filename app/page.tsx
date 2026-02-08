@@ -1,12 +1,12 @@
 'use client'
 import React, { useState } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
-import { 
-  Github, 
-  Linkedin, 
-  Mail, 
-  ExternalLink, 
-  Terminal, 
+import {
+  Github,
+  Linkedin,
+  Mail,
+  ExternalLink,
+  Terminal,
   Code2,
   ArrowRight,
   Truck,
@@ -77,9 +77,9 @@ const techStacks: TechStack[] = [
     icon: Bot,
     highlight: true,
     skills: [
-      "AI Agent Workflows", 
-      "CLI Coding Agents", 
-      "LLM Integration (OpenAI/Deepseek)", 
+      "AI Agent Workflows",
+      "CLI Coding Agents",
+      "LLM Integration (OpenAI/Deepseek)",
       "RAG Pipelines",
       "Python Automation"
     ]
@@ -102,28 +102,19 @@ const techStacks: TechStack[] = [
 ];
 
 const projects: Project[] = [
-{
-  "title": "MeetingFlow",
-  "description": "MeetingFlow is an AI-powered meeting productivity platform designed to turn meetings into progress engines by ensuring agendas, tracking decisions, assigning action items, and integrating seamlessly with your existing tools.",
-  "tags": ["AI","Productivity","Meetings","Calendar Integration","Action Tracking","Team Tools", "AWS"],
-  "link": "https://meetingflow.vercel.app/",
-  "icon": "CalendarCheck", 
-  "featured": false,
-  "isPrivate": true
-},
-{
-  "title": "MeetingFlow",
-  "description": "MeetingFlow is an AI-powered meeting productivity platform designed to turn meetings into progress engines by ensuring agendas, tracking decisions, assigning action items, and integrating seamlessly with your existing tools.",
-  "tags": ["AI","Productivity","Meetings","Calendar Integration","Action Tracking","Team Tools"],
-  "link": "https://meetingflow.vercel.app/",
-  "icon": "CalendarCheck", 
-  "featured": false,
-  "isPrivate": false
-},
   {
-    title:"Shop Web App",
-    description:"Shop-Web is a modern full-stack e-commerce platform engineered to deliver a high-performance, premium shopping experience by prioritizing clean UI/UX, scalability, and production-ready architecture.",
-    tags:["HonoJS", "PostgreSQL", "NextJS","Typescript", "TailwindCSS"],
+    title: "MeetingFlow",
+    description: "MeetingFlow is an AI-powered meeting productivity platform designed to turn meetings into progress engines by ensuring agendas, tracking decisions, assigning action items, and integrating seamlessly with your existing tools.",
+    tags: ["AI", "Productivity", "Meetings", "Calendar Integration", "Action Tracking", "Team Tools", "AWS"],
+    link: "https://meetingflow.vercel.app/",
+    icon: CalendarCheck,
+    featured: false,
+    isPrivate: true
+  },
+  {
+    title: "Shop Web App",
+    description: "Shop-Web is a modern full-stack e-commerce platform engineered to deliver a high-performance, premium shopping experience by prioritizing clean UI/UX, scalability, and production-ready architecture.",
+    tags: ["HonoJS", "PostgreSQL", "NextJS", "Typescript", "TailwindCSS"],
     link: "https://myshop-enichip.vercel.app/",
     icon: ShoppingBag,
     featured: true,
@@ -241,15 +232,15 @@ const stagger = {
 };
 
 const menuVariants = {
-  closed: { 
-    opacity: 0, 
-    scale: 0.95, 
+  closed: {
+    opacity: 0,
+    scale: 0.95,
     y: -20,
     transition: { duration: 0.2 }
   },
-  open: { 
-    opacity: 1, 
-    scale: 1, 
+  open: {
+    opacity: 1,
+    scale: 1,
     y: 0,
     transition: { duration: 0.2 }
   }
@@ -258,16 +249,15 @@ const menuVariants = {
 // --- Components ---
 
 const NavLink = ({ href, children, active, onClick }: { href: string; children: React.ReactNode; active?: boolean; onClick?: () => void }) => (
-  <a 
-    href={href} 
+  <a
+    href={href}
     onClick={onClick}
-    className={`relative px-4 py-2 text-sm font-medium transition-colors duration-300 ${
-      active ? 'text-cyan-400' : 'text-slate-400 hover:text-slate-100'
-    }`}
+    className={`relative px-4 py-2 text-sm font-medium transition-colors duration-300 ${active ? 'text-cyan-400' : 'text-slate-400 hover:text-slate-100'
+      }`}
   >
     {children}
     {active && (
-      <motion.div 
+      <motion.div
         layoutId="activeTab"
         className="absolute inset-0 bg-white/5 rounded-full -z-10"
         transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
@@ -278,7 +268,7 @@ const NavLink = ({ href, children, active, onClick }: { href: string; children: 
 
 const SectionHeading = ({ children, subtitle }: { children: React.ReactNode; subtitle?: string }) => (
   <div className="mb-12">
-    <motion.h2 
+    <motion.h2
       initial={{ opacity: 0, x: -20 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
@@ -287,7 +277,7 @@ const SectionHeading = ({ children, subtitle }: { children: React.ReactNode; sub
       {children}
     </motion.h2>
     {subtitle && (
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, x: -20 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
@@ -309,11 +299,10 @@ const TechStackCard = ({ stack }: { stack: TechStack }) => {
   return (
     <motion.div
       variants={fadeInUp}
-      className={`p-6 rounded-2xl border backdrop-blur-sm bg-slate-900/40 flex flex-col h-full hover:bg-slate-800/40 transition-colors duration-300 ${
-        stack.highlight 
-          ? 'border-cyan-500/30 shadow-[0_0_15px_rgba(6,182,212,0.1)]' 
+      className={`p-6 rounded-2xl border backdrop-blur-sm bg-slate-900/40 flex flex-col h-full hover:bg-slate-800/40 transition-colors duration-300 ${stack.highlight
+          ? 'border-cyan-500/30 shadow-[0_0_15px_rgba(6,182,212,0.1)]'
           : 'border-white/5 hover:border-white/10'
-      }`}
+        }`}
     >
       <div className="flex items-center gap-3 mb-4">
         <div className={`p-2 rounded-lg ${stack.highlight ? 'bg-cyan-500/20 text-cyan-400' : 'bg-slate-800 text-slate-400'}`}>
@@ -325,13 +314,12 @@ const TechStackCard = ({ stack }: { stack: TechStack }) => {
       </div>
       <div className="flex flex-wrap gap-2">
         {stack.skills.map((skill) => (
-          <span 
-            key={skill} 
-            className={`text-xs px-2 py-1 rounded border ${
-              stack.highlight 
-                ? 'bg-cyan-950/50 border-cyan-900/50 text-cyan-200' 
+          <span
+            key={skill}
+            className={`text-xs px-2 py-1 rounded border ${stack.highlight
+                ? 'bg-cyan-950/50 border-cyan-900/50 text-cyan-200'
                 : 'bg-slate-950/50 border-slate-800 text-slate-400'
-            }`}
+              }`}
           >
             {skill}
           </span>
@@ -344,7 +332,7 @@ const TechStackCard = ({ stack }: { stack: TechStack }) => {
 const ProjectCard = ({ project }: { project: Project }) => {
   const Icon = project.icon;
   return (
-    <motion.div 
+    <motion.div
       variants={fadeInUp}
       className="group relative flex flex-col h-full bg-slate-900/40 backdrop-blur-sm border border-white/5 rounded-2xl overflow-hidden hover:border-cyan-500/30 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/10 hover:-translate-y-1"
     >
@@ -362,7 +350,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
           <div className="p-3 bg-slate-800/80 rounded-xl border border-white/5 text-cyan-400 group-hover:text-cyan-300 group-hover:scale-110 transition-all duration-300">
             <Icon size={24} />
           </div>
-          
+
           <div className="flex gap-2">
             {project.isPrivate ? (
               <span className="p-2 text-slate-600" title="Private Repository">
@@ -384,7 +372,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
         <h3 className="text-xl font-bold text-slate-100 mb-3 group-hover:text-cyan-400 transition-colors">
           {project.title}
         </h3>
-        
+
         <p className="text-slate-400 text-sm leading-relaxed mb-8 flex-grow">
           {project.description}
         </p>
@@ -402,7 +390,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
 };
 
 const ExperienceCard = ({ exp, index }: { exp: Experience, index: number }) => (
-  <motion.div 
+  <motion.div
     initial={{ opacity: 0, x: -20 }}
     whileInView={{ opacity: 1, x: 0 }}
     viewport={{ once: true }}
@@ -410,12 +398,12 @@ const ExperienceCard = ({ exp, index }: { exp: Experience, index: number }) => (
     className="relative pl-8 md:pl-12 border-l border-slate-800 pb-12 last:pb-0"
   >
     <div className="absolute -left-[5px] top-0 h-2.5 w-2.5 rounded-full bg-cyan-500 shadow-[0_0_10px_rgba(6,182,212,0.5)] ring-4 ring-slate-950" />
-    
+
     <div className="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-4 mb-2">
       <h3 className="text-xl font-bold text-slate-100">{exp.role}</h3>
       <span className="text-sm font-medium text-cyan-400">{exp.company}</span>
     </div>
-    
+
     <div className="flex items-center gap-4 text-xs font-mono text-slate-500 mb-6 uppercase tracking-wider">
       <span>{exp.period}</span>
       <span className="w-1 h-1 rounded-full bg-slate-700" />
@@ -450,7 +438,7 @@ export default function Portfolio() {
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-200 selection:bg-cyan-500/30 font-sans overflow-x-hidden">
-      
+
       {/* Dynamic Background */}
       <div className="fixed inset-0 z-0 pointer-events-none">
         <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-cyan-900/10 blur-[120px]" />
@@ -460,7 +448,7 @@ export default function Portfolio() {
 
       {/* Navigation */}
       <div className="fixed top-0 md:top-6 left-0 right-0 z-50 flex justify-center md:px-4">
-        <motion.nav 
+        <motion.nav
           initial={{ y: -100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           className="relative w-full md:w-auto bg-slate-900/90 md:bg-slate-900/80 backdrop-blur-md md:border md:border-white/10 md:rounded-full px-6 py-4 md:py-3 shadow-2xl shadow-black/50 flex flex-col md:flex-row items-center md:gap-6"
@@ -469,9 +457,9 @@ export default function Portfolio() {
             <a href="#" className="mr-4 p-1 bg-gradient-to-tr from-cyan-500 to-blue-600 rounded-lg text-white">
               <Terminal size={18} />
             </a>
-            
+
             {/* Mobile Menu Toggle */}
-            <button 
+            <button
               className="md:hidden p-2 text-slate-400 hover:text-white transition-colors"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
@@ -487,8 +475,8 @@ export default function Portfolio() {
               </NavLink>
             ))}
           </div>
-          
-          <motion.a 
+
+          <motion.a
             href="#contact"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -508,16 +496,16 @@ export default function Portfolio() {
                 className="absolute top-full left-0 right-0 mt-2 p-4 bg-slate-900/95 border-b border-white/10 backdrop-blur-xl md:hidden flex flex-col gap-4 shadow-2xl"
               >
                 {['About', 'Projects', 'Experience'].map((item) => (
-                  <NavLink 
-                    key={item} 
+                  <NavLink
+                    key={item}
                     href={`#${item.toLowerCase()}`}
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {item}
                   </NavLink>
                 ))}
-                <a 
-                  href="#contact" 
+                <a
+                  href="#contact"
                   onClick={() => setMobileMenuOpen(false)}
                   className="px-5 py-3 bg-cyan-600 text-white text-center text-sm font-bold rounded-lg hover:bg-cyan-500 transition-colors"
                 >
@@ -530,12 +518,12 @@ export default function Portfolio() {
       </div>
 
       <main className="relative z-10 max-w-6xl mx-auto px-6 pt-32 md:pt-48 pb-20">
-        
+
         {/* Hero Section */}
         <section id="about" className="min-h-[80vh] flex flex-col md:flex-row items-center justify-between gap-12 mb-20">
-          
+
           {/* Text Content */}
-          <motion.div 
+          <motion.div
             initial="initial"
             animate="animate"
             variants={stagger}
@@ -549,7 +537,7 @@ export default function Portfolio() {
               <span className="text-emerald-400 text-sm font-medium tracking-wide uppercase">Open to Work</span>
             </motion.div>
 
-            <motion.h1 
+            <motion.h1
               variants={fadeInUp}
               className="text-5xl md:text-7xl font-bold tracking-tight text-white mb-8 leading-[1.1]"
             >
@@ -564,8 +552,8 @@ export default function Portfolio() {
             </motion.p>
 
             <motion.div variants={fadeInUp} className="flex flex-wrap items-center gap-6">
-              <a 
-                href="#projects" 
+              <a
+                href="#projects"
                 className="group flex items-center gap-2 px-6 py-3 bg-cyan-600 hover:bg-cyan-500 text-white rounded-full font-medium transition-all"
               >
                 View Selected Work
@@ -580,7 +568,7 @@ export default function Portfolio() {
           </motion.div>
 
           {/* Image Section */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.9, rotate: 5 }}
             animate={{ opacity: 1, scale: 1, rotate: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -588,15 +576,15 @@ export default function Portfolio() {
           >
             {/* Decorative Glow */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-cyan-500/20 rounded-full blur-[80px]" />
-            
+
             {/* Image Container */}
             <div className="group relative w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96">
               <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500 to-blue-600 rounded-[2rem] rotate-6 group-hover:rotate-2 opacity-50 transition-all duration-500 blur-sm"></div>
               <div className="absolute inset-0 bg-slate-900 rounded-[2rem] rotate-3 group-hover:rotate-1 transition-all duration-500 border border-white/10"></div>
               <div className="absolute inset-0 rounded-[2rem] overflow-hidden border-2 border-slate-700/50 shadow-2xl group-hover:scale-[1.02] transition-transform duration-500">
-                <img 
-                  src="/me.jpeg" 
-                  alt="Martin Tembo" 
+                <img
+                  src="/me.jpeg"
+                  alt="Martin Tembo"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -608,7 +596,7 @@ export default function Portfolio() {
         {/* Tech Stack Cards */}
         <section className="py-10 mb-20">
           <SectionHeading subtitle="Expertise">Technical Arsenal</SectionHeading>
-          <motion.div 
+          <motion.div
             variants={stagger}
             initial="initial"
             whileInView="animate"
@@ -624,8 +612,8 @@ export default function Portfolio() {
         {/* Projects Section */}
         <section id="projects" className="py-24 scroll-mt-20 border-t border-slate-900/50">
           <SectionHeading subtitle="Featured Work">Selected Projects</SectionHeading>
-          
-          <motion.div 
+
+          <motion.div
             initial="initial"
             whileInView="animate"
             viewport={{ once: true, margin: "-50px" }}
@@ -650,7 +638,7 @@ export default function Portfolio() {
                 <Download size={18} /> Download Resume
               </a>
             </div>
-            
+
             <div className="space-y-2">
               {experiences.map((exp, index) => (
                 <ExperienceCard key={index} exp={exp} index={index} />
@@ -661,29 +649,29 @@ export default function Portfolio() {
 
         {/* Contact Section */}
         <section id="contact" className="py-24 mb-20">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             className="relative bg-gradient-to-br from-slate-900 to-slate-950 p-10 md:p-16 rounded-3xl border border-white/5 overflow-hidden text-center"
           >
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-64 bg-cyan-500/20 rounded-full blur-[100px] pointer-events-none" />
-            
+
             <div className="relative z-10 max-w-2xl mx-auto">
               <h2 className="text-4xl font-bold text-white mb-6">Ready to collaborate?</h2>
               <p className="text-slate-400 text-lg mb-10">
-                I'm currently available for freelance projects and full-time roles. 
+                I'm currently available for freelance projects and full-time roles.
                 If you have a project that needs some serious engineering, let's chat.
               </p>
-              
+
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a 
-                  href="mailto:martin.codegene@gmail.com" 
+                <a
+                  href="mailto:martin.codegene@gmail.com"
                   className="w-full sm:w-auto px-8 py-4 bg-white text-slate-950 font-bold rounded-full hover:bg-cyan-50 transition-colors"
                 >
                   martin.codegene@gmail.com
                 </a>
-                <a 
+                <a
                   href="https://wa.me/260779699188"
                   className="w-full sm:w-auto px-8 py-4 bg-slate-800 text-white font-bold rounded-full border border-slate-700 hover:bg-slate-700 transition-colors flex items-center justify-center gap-2"
                 >
@@ -706,7 +694,7 @@ export default function Portfolio() {
 // --- Helpers ---
 
 const SocialLink = ({ href, icon: Icon }: { href: string; icon: React.ElementType }) => (
-  <a 
+  <a
     href={href}
     target="_blank"
     rel="noopener noreferrer"
