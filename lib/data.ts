@@ -23,7 +23,7 @@ export const EXPERIENCES: Experience[] = [
         company: "Homiee",
         role: "Full Stack Developer",
         location: "Australia (Remote)",
-        period: "2025 — Present",
+        period: "2025 — 2026",
         description: [
             "Architecting a scalable real estate platform serving the Australian market.",
             "Building high-performance property search engines with sub-100ms latency.",
