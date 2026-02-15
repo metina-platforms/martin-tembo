@@ -43,7 +43,7 @@ const Sidebar = () => (
                     Full Stack & AI Engineer
                 </h2>
                 <p className="mt-4 max-w-xs leading-normal text-neutral-400">
-                    I build scalable digital architectures and intelligent automated systems for the future web.
+                    I build scalable digital architectures and intelligent automated systems for the future web and mobile applications.
                 </p>
             </motion.div>
 
