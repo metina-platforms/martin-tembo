@@ -23,7 +23,7 @@ export const EXPERIENCES: Experience[] = [
         company: "Homiee",
         role: "Full Stack Developer",
         location: "Australia (Remote)",
-        period: "2025 — Present",
+        period: "2025 — 2026",
         description: [
             "Architected and developed core systems for a real estate web platform serving the Australian market.",
             "Designed and built production-grade user interfaces in Next.js and React, including dashboards, video interaction panels, and AI chat interfaces.",
@@ -137,6 +137,7 @@ export const PROJECTS: Project[] = [
 ];
 
 export const SKILLS = [
+<<<<<<< HEAD
     {
         category: "Languages",
         items: ["TypeScript", "JavaScript", "Python", "Golang", "SQL", "GraphQL"]
@@ -162,3 +163,10 @@ export const SKILLS = [
         items: ["LLMs & Agents", "NLP", "Machine Learning", "RAG Pipelines"]
     },
 ];
+=======
+    { category: "Languages", items: ["TypeScript", "Golang", "Python", "SQL"] },
+    { category: "Frameworks", items: ["Next.js", "NestJS", "FastAPI", "Hono"] },
+    { category: "Infrastructure", items: ["AWS", "Docker", "Linux", "CI/CD"] },
+    { category: "AI Engineering", items: ["RAG Pipelines", "LLM Integration", "Agents"] },
+];
+>>>>>>> d56354d76710fc9c740d612f194809cee616c094
