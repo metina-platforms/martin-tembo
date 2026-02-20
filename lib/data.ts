@@ -137,7 +137,6 @@ export const PROJECTS: Project[] = [
 ];
 
 export const SKILLS = [
-<<<<<<< HEAD
     {
         category: "Languages",
         items: ["TypeScript", "JavaScript", "Python", "Golang", "SQL", "GraphQL"]
@@ -163,10 +162,3 @@ export const SKILLS = [
         items: ["LLMs & Agents", "NLP", "Machine Learning", "RAG Pipelines"]
     },
 ];
-=======
-    { category: "Languages", items: ["TypeScript", "Golang", "Python", "SQL"] },
-    { category: "Frameworks", items: ["Next.js", "NestJS", "FastAPI", "Hono"] },
-    { category: "Infrastructure", items: ["AWS", "Docker", "Linux", "CI/CD"] },
-    { category: "AI Engineering", items: ["RAG Pipelines", "LLM Integration", "Agents"] },
-];
->>>>>>> d56354d76710fc9c740d612f194809cee616c094
