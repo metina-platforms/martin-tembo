@@ -31,7 +31,7 @@ const EXPERIENCES = [
       "Designed and built production-grade user interfaces in Next.js and React, including dashboards, video interaction panels, and AI chat interfaces.",
       "Engineered a real-time AI-powered chat system enabling Q/A between users and intelligent agents using NLP-driven workflows."
     ],
-    tech: ["Next.js", "React", "Node.js", "Python", "AWS", "OpenAI", "React Native/Expo"]
+    tech: ["Next.js", "React", "Node.js", "Python", "AWS", "OpenAI"]
   },
   {
     company: "Elobbs Technologies",
@@ -245,7 +245,7 @@ export default function App() {
               </div>
               <div>
                 <h4 className="text-xl font-bold text-slate-900">Frontend Development</h4>
-                <p className="text-slate-500 text-sm mt-1">React, Next.js, UI/UX Implementation</p>
+                <p className="text-slate-500 text-sm mt-1">React, Next.js, UI/UX Implementation, React Native/Expo</p>
               </div>
             </motion.div>
 
