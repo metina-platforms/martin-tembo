@@ -31,7 +31,7 @@ const EXPERIENCES = [
       "Designed and built production-grade user interfaces in Next.js and React, including dashboards, video interaction panels, and AI chat interfaces.",
       "Engineered a real-time AI-powered chat system enabling Q/A between users and intelligent agents using NLP-driven workflows."
     ],
-    tech: ["Next.js", "React", "Node.js", "Python", "AWS", "OpenAI"]
+    tech: ["Next.js", "React", "Node.js", "Python", "AWS", "OpenAI", "React Native/Expo"]
   },
   {
     company: "Elobbs Technologies",
