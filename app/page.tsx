@@ -25,7 +25,7 @@ const EXPERIENCES = [
     company: "Homiee",
     role: "Full Stack Developer",
     location: "Australia (Remote)",
-    period: "2025 — Present",
+    period: "2025 — 2026",
     description: [
       "Architected and developed core systems for a real estate web platform serving the Australian market.",
       "Designed and built production-grade user interfaces in Next.js and React, including dashboards, video interaction panels, and AI chat interfaces.",
