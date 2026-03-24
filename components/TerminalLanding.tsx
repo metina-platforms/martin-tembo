@@ -1,0 +1,360 @@
+'use client';
+
+import {
+    Terminal,
+    Layers,
+    Cpu,
+    Database,
+    Mail,
+    Phone,
+    Github,
+    ArrowRight
+} from 'lucide-react';
+
+export default function TerminalLanding() {
+    return (
+        <div className="bg-[#050505] text-[#f0f0f0] font-['Space_Grotesk',sans-serif] overflow-x-hidden scroll-smooth selection:bg-[#00ff88]/30">
+
+            {/* Global custom styles for complex patterns and animations */}
+            <style dangerouslySetInnerHTML={{
+                __html: `
+        /* Scanline overlay */
+        body::before {
+          content: '';
+          position: fixed; inset: 0;
+          background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,255,136,0.02) 2px, rgba(0,255,136,0.02) 4px);
+          pointer-events: none; z-index: 9999;
+        }
+        
+        /* Hero grid with radial mask */
+        .hero-grid {
+          position: absolute; inset: 0;
+          background-image: linear-gradient(#1a1a1a 1px, transparent 1px), linear-gradient(90deg, #1a1a1a 1px, transparent 1px);
+          background-size: 60px 60px;
+          opacity: 0.4;
+          mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
+          -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
+        }
+
+        @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+        @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+        .animate-blink { animation: blink 1s infinite; }
+        .animate-pulse-slow { animation: pulse 2s infinite; }
+      `}} />
+
+            {/* NAV */}
+            <nav className="fixed top-0 w-full z-50 px-6 md:px-12 py-4 flex justify-between items-center bg-[#050505]/90 backdrop-blur-md border-b border-[#1a1a1a]">
+                <div className="font-['JetBrains_Mono',monospace] text-sm text-[#00ff88] tracking-widest">
+                    <span className="text-[#555]">~/</span>martin-tembo
+                </div>
+                <div className="hidden md:flex gap-8">
+                    <a href="#skills" className="text-[#888] hover:text-[#00ff88] text-[13px] tracking-widest uppercase transition-colors">Skills</a>
+                    <a href="#experience" className="text-[#888] hover:text-[#00ff88] text-[13px] tracking-widest uppercase transition-colors">Experience</a>
+                    <a href="#projects" className="text-[#888] hover:text-[#00ff88] text-[13px] tracking-widest uppercase transition-colors">Projects</a>
+                    <a href="#contact" className="text-[#888] hover:text-[#00ff88] text-[13px] tracking-widest uppercase transition-colors">Contact</a>
+                </div>
+                <a href="mailto:martin.codegene@gmail.com" className="bg-transparent border border-[#00ff88] text-[#00ff88] px-5 py-2 font-['JetBrains_Mono',monospace] text-xs tracking-widest uppercase hover:bg-[#00ff88] hover:text-[#050505] transition-all">
+                    Hire Me
+                </a>
+            </nav>
+
+            {/* HERO */}
+            <section className="min-h-screen flex items-center px-6 md:px-12 pt-[120px] pb-20 relative">
+                <div className="hero-grid pointer-events-none"></div>
+                <div className="relative max-w-[900px] z-10 w-full">
+                    <div className="font-['JetBrains_Mono',monospace] text-xs text-[#00ff88] tracking-[3px] uppercase mb-6 flex items-center gap-3 before:content-[''] before:w-10 before:h-[1px] before:bg-[#00ff88]">
+                        <span className="animate-blink text-sm">◉</span> Available for opportunities
+                    </div>
+                    <h1 className="text-[clamp(48px,8vw,96px)] font-bold leading-none tracking-tight mb-6">
+                        Martin<br />
+                        <span className="text-[#00ff88]">Tembo</span>
+                        <span className="text-[#555] font-light">.</span>
+                    </h1>
+                    <p className="text-lg text-[#888] leading-relaxed max-w-[560px] mb-12">
+                        Full Stack Software Engineer architecting scalable, AI-driven digital products. I bridge complex backend systems with sleek, highly interactive frontend experiences.
+                    </p>
+                    <div className="flex flex-wrap gap-4">
+                        <a href="#projects" className="bg-[#00ff88] text-[#050505] px-8 py-3.5 font-bold text-sm tracking-widest uppercase hover:bg-[#00cc6a] hover:-translate-y-0.5 transition-all flex items-center ">
+                            <span>
+                                View My Work
+                            </span>
+                        </a>
+                        <a href="mailto:martin.codegene@gmail.com" className="bg-transparent border border-[#1a1a1a] text-[#888] px-8 py-3.5 text-sm tracking-widest uppercase hover:border-[#00ff88] hover:text-[#00ff88] transition-colors flex items-center ">
+                            <span>
+                                Get In Touch
+                            </span>
+                        </a>
+                        {/* X  link */}
+                        <a href="https://x.com/martintembo_1" target="_blank" rel="noreferrer" className="flex items-center gap-4 p-5 md:p-6 border border-[#1a1a1a] hover:border-[#00ff88] group transition-colors">
+                            {/* <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" />
+                            </svg> */}
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                className="w-6 h-6 text-[#888] group-hover:text-[#00ff88] transition-colors"
+                            >
+                                <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-8 9-11 3.6 2.6 4.6 8 2 11" />
+                            </svg>
+                            <div className="text-sm text-[#f0f0f0] group-hover:text-[#00ff88] transition-colors">X</div>
+                        </a>
+                        <a href="https://github.com/metina-platforms" target="_blank" rel="noreferrer" className="flex items-center gap-4 p-5 md:p-6 border border-[#1a1a1a] hover:border-[#00ff88] group transition-colors">
+                            <Github className="w-6 h-6 text-[#888] group-hover:text-[#00ff88] transition-colors" />
+                            <div className="text-sm text-[#f0f0f0] group-hover:text-[#00ff88] transition-colors">GitHub</div>
+                        </a>
+                    </div>
+                    <div className="flex gap-8 md:gap-12 mt-20 pt-12 border-t border-[#1a1a1a]">
+                        <div>
+                            <div className="text-[40px] font-bold text-[#00ff88] font-['JetBrains_Mono',monospace]">5+</div>
+                            <div className="text-xs text-[#555] tracking-widest uppercase mt-1">Years Experience</div>
+                        </div>
+                        <div>
+                            <div className="text-[40px] font-bold text-[#00ff88] font-['JetBrains_Mono',monospace]">3+</div>
+                            <div className="text-xs text-[#555] tracking-widest uppercase mt-1">Projects Shipped</div>
+                        </div>
+                        <div>
+                            <div className="text-[40px] font-bold text-[#00ff88] font-['JetBrains_Mono',monospace]">100%</div>
+                            <div className="text-xs text-[#555] tracking-widest uppercase mt-1">Client Satisfaction</div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* TERMINAL BLOCK */}
+                <div className="hidden lg:block absolute right-12 top-1/2 -translate-y-1/2 w-[360px] bg-[#0d0d0d] border border-[#1a1a1a] p-5 z-10 shadow-2xl">
+                    <div className="flex gap-2 mb-4">
+                        <div className="w-3 h-3 rounded-full bg-[#ff5f57]"></div>
+                        <div className="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+                        <div className="w-3 h-3 rounded-full bg-[#28ca41]"></div>
+                    </div>
+                    <div className="font-['JetBrains_Mono',monospace] text-xs leading-relaxed">
+                        <div><span className="text-[#00ff88]">$ </span><span className="text-[#f0f0f0]">cat developer.json</span></div>
+                        <div className="text-[#888]">{"{"}</div>
+                        <div className="text-[#888]">&nbsp;&nbsp;<span className="text-[#7dd3fc]">"name"</span>: <span className="text-[#fbbf24]">"Martin Tembo"</span>,</div>
+                        <div className="text-[#888]">&nbsp;&nbsp;<span className="text-[#7dd3fc]">"role"</span>: <span className="text-[#fbbf24]">"Full Stack Engineer"</span>,</div>
+                        <div className="text-[#888]">&nbsp;&nbsp;<span className="text-[#7dd3fc]">"location"</span>: <span className="text-[#fbbf24]">"Remote / Zambia"</span>,</div>
+                        <div className="text-[#888]">&nbsp;&nbsp;<span className="text-[#7dd3fc]">"stack"</span>: [</div>
+                        <div className="text-[#888]">&nbsp;&nbsp;&nbsp;&nbsp;<span className="text-[#fbbf24]">"Next.js"</span>, <span className="text-[#fbbf24]">"React"</span>,</div>
+                        <div className="text-[#888]">&nbsp;&nbsp;&nbsp;&nbsp;<span className="text-[#fbbf24]">"NestJS"</span>, <span className="text-[#fbbf24]">"AWS"</span>,</div>
+                        <div className="text-[#888]">&nbsp;&nbsp;&nbsp;&nbsp;<span className="text-[#fbbf24]">"OpenAI"</span>, <span className="text-[#fbbf24]">"Go"</span></div>
+                        <div className="text-[#888]">&nbsp;&nbsp;],</div>
+                        <div className="text-[#888]">&nbsp;&nbsp;<span className="text-[#7dd3fc]">"available"</span>: <span className="text-[#00ff88]">true</span></div>
+                        <div className="text-[#888]">{"}"}</div>
+                        <div className="mt-3"><span className="text-[#00ff88]">$ </span><span className="text-[#f0f0f0]">./hire-martin.sh<span className="animate-blink">▋</span></span></div>
+                    </div>
+                </div>
+            </section>
+
+            {/* SKILLS */}
+            <section id="skills" className="px-6 md:px-12 py-[60px] md:py-[100px]">
+                <div className="mb-16">
+                    <div className="font-['JetBrains_Mono',monospace] text-xs text-[#00ff88] tracking-[3px] uppercase mb-3">
+            // 01 — Capabilities
+                    </div>
+                    <h2 className="text-[clamp(32px,5vw,56px)] font-bold tracking-tight">
+                        What I <span className="text-[#555]">Build</span>
+                    </h2>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[1px] bg-[#1a1a1a]">
+                    <div className="bg-[#0d0d0d] p-8 hover:bg-[#111] transition-colors">
+                        <Layers className="text-[#00ff88] mb-4" size={28} strokeWidth={1.5} />
+                        <div className="text-base font-bold mb-2">Frontend Development</div>
+                        <div className="text-[13px] text-[#888] leading-relaxed">Building pixel-perfect, performant UIs with React & Next.js. From dashboards to AI chat interfaces.</div>
+                        <div className="flex flex-wrap gap-1.5 mt-4">
+                            {['React', 'Next.js', 'React Native', 'Expo', 'UI/UX'].map(tag => (
+                                <span key={tag} className="font-['JetBrains_Mono',monospace] text-[10px] tracking-widest px-2 py-0.5 border border-[#1a1a1a] text-[#888]">{tag}</span>
+                            ))}
+                        </div>
+                    </div>
+                    <div className="bg-[#0d0d0d] p-8 hover:bg-[#111] transition-colors">
+                        <Terminal className="text-[#00ff88] mb-4" size={28} strokeWidth={1.5} />
+                        <div className="text-base font-bold mb-2">AI Integration</div>
+                        <div className="text-[13px] text-[#888] leading-relaxed">Embedding LLMs into production apps — NLP workflows, OpenAI agents, and intelligent automation.</div>
+                        <div className="flex flex-wrap gap-1.5 mt-4">
+                            {['OpenAI', 'LLMs', 'NLP', 'AI Agents'].map(tag => (
+                                <span key={tag} className="font-['JetBrains_Mono',monospace] text-[10px] tracking-widest px-2 py-0.5 border border-[#1a1a1a] text-[#888]">{tag}</span>
+                            ))}
+                        </div>
+                    </div>
+                    <div className="bg-[#0d0d0d] p-8 hover:bg-[#111] transition-colors">
+                        <Cpu className="text-[#00ff88] mb-4" size={28} strokeWidth={1.5} />
+                        <div className="text-base font-bold mb-2">Backend Systems</div>
+                        <div className="text-[13px] text-[#888] leading-relaxed">Scalable microservices, RESTful APIs, and cloud infrastructure built for production loads.</div>
+                        <div className="flex flex-wrap gap-1.5 mt-4">
+                            {['NestJS', 'Node.js', 'Go', 'AWS', 'Microservices'].map(tag => (
+                                <span key={tag} className="font-['JetBrains_Mono',monospace] text-[10px] tracking-widest px-2 py-0.5 border border-[#1a1a1a] text-[#888]">{tag}</span>
+                            ))}
+                        </div>
+                    </div>
+                    <div className="bg-[#0d0d0d] p-8 hover:bg-[#111] transition-colors">
+                        <Database className="text-[#00ff88] mb-4" size={28} strokeWidth={1.5} />
+                        <div className="text-base font-bold mb-2">Databases & DevOps</div>
+                        <div className="text-[13px] text-[#888] leading-relaxed">Managing data at scale with PostgreSQL, MongoDB, and cloud-native infrastructure patterns.</div>
+                        <div className="flex flex-wrap gap-1.5 mt-4">
+                            {['PostgreSQL', 'MongoDB', 'AWS', 'Docker'].map(tag => (
+                                <span key={tag} className="font-['JetBrains_Mono',monospace] text-[10px] tracking-widest px-2 py-0.5 border border-[#1a1a1a] text-[#888]">{tag}</span>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* EXPERIENCE */}
+            <section id="experience" className="px-6 md:px-12 py-[60px] md:py-[100px] bg-[#0d0d0d]">
+                <div className="mb-16">
+                    <div className="font-['JetBrains_Mono',monospace] text-xs text-[#00ff88] tracking-[3px] uppercase mb-3">
+            // 02 — Work History
+                    </div>
+                    <h2 className="text-[clamp(32px,5vw,56px)] font-bold tracking-tight">
+                        Where I&apos;ve <span className="text-[#555]">Worked</span>
+                    </h2>
+                </div>
+
+                <div className="flex flex-col">
+                    <div className="py-10 border-b border-[#1a1a1a] grid grid-cols-1 md:grid-cols-[200px_1fr] gap-6 md:gap-12">
+                        <div>
+                            <div className="font-['JetBrains_Mono',monospace] text-xs text-[#00ff88]">2025 — 2026</div>
+                            <div className="font-bold text-lg mt-2 mb-1">Homiee</div>
+                            <div className="text-xs text-[#555]">Australia (Remote)</div>
+                        </div>
+                        <div>
+                            <div className="text-[22px] font-bold mb-4">Full Stack Developer</div>
+                            <ul className="space-y-2">
+                                <li className="text-[14px] text-[#888] leading-relaxed pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-[#00ff88]">Architected and developed core systems for a real estate web platform serving the Australian market.</li>
+                                <li className="text-[14px] text-[#888] leading-relaxed pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-[#00ff88]">Designed production-grade user interfaces in Next.js and React — dashboards, video panels, AI chat interfaces.</li>
+                                <li className="text-[14px] text-[#888] leading-relaxed pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-[#00ff88]">Engineered a real-time AI-powered chat system enabling Q&A between users and intelligent agents using NLP workflows.</li>
+                            </ul>
+                            <div className="flex flex-wrap gap-1.5 mt-4">
+                                {['Next.js', 'React', 'Node.js', 'Python', 'AWS', 'OpenAI'].map(tag => (
+                                    <span key={tag} className="font-['JetBrains_Mono',monospace] text-[10px] tracking-widest px-2 py-0.5 border border-[#1a1a1a] text-[#888]">{tag}</span>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="py-10 border-b border-[#1a1a1a] grid grid-cols-1 md:grid-cols-[200px_1fr] gap-6 md:gap-12">
+                        <div>
+                            <div className="font-['JetBrains_Mono',monospace] text-xs text-[#00ff88]">2023 — 2025</div>
+                            <div className="font-bold text-lg mt-2 mb-1">Elobbs Technologies</div>
+                            <div className="text-xs text-[#555]">Remote — Bangladesh</div>
+                        </div>
+                        <div>
+                            <div className="text-[22px] font-bold mb-4">Full-Stack Engineer</div>
+                            <ul className="space-y-2">
+                                <li className="text-[14px] text-[#888] leading-relaxed pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-[#00ff88]">Developed and maintained NestJS backend services for a job posting and contract management platform.</li>
+                                <li className="text-[14px] text-[#888] leading-relaxed pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-[#00ff88]">Implemented RESTful APIs for job listings, contracts, and user workflows.</li>
+                                <li className="text-[14px] text-[#888] leading-relaxed pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-[#00ff88]">Built a Google Business Reviews aggregation system using Go (Golang) microservices.</li>
+                            </ul>
+                            <div className="flex flex-wrap gap-1.5 mt-4">
+                                {['NestJS', 'Node.js', 'PostgreSQL', 'MongoDB', 'Golang', 'React'].map(tag => (
+                                    <span key={tag} className="font-['JetBrains_Mono',monospace] text-[10px] tracking-widest px-2 py-0.5 border border-[#1a1a1a] text-[#888]">{tag}</span>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* PROJECTS */}
+            <section id="projects" className="px-6 md:px-12 py-[60px] md:py-[100px]">
+                <div className="mb-16">
+                    <div className="font-['JetBrains_Mono',monospace] text-xs text-[#00ff88] tracking-[3px] uppercase mb-3">
+            // 03 — Selected Work
+                    </div>
+                    <h2 className="text-[clamp(32px,5vw,56px)] font-bold tracking-tight">
+                        Things I&apos;ve <span className="text-[#555]">Built</span>
+                    </h2>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[1px] bg-[#1a1a1a]">
+                    {[
+                        { cat: 'AI Platform', title: 'PricePul', desc: 'B2B pricing intelligence SaaS. Monitors competitor pricing pages 24/7 with AI-powered change detection and Slack/CRM alerts for sales teams.', tags: ['Next.js', 'AI', "HonoJS", "PrismaORM", "PostgreSQL", "TailwindCSS", "Redis", 'SaaS', 'B2B'], link: 'https://pricepul.com', linkText: 'pricepul.com', num: '01' },
+                        { cat: 'AI Platform', title: 'AudienceAce', desc: 'AI-powered B2B lead generation platform utilizing an NLP engine to identify, qualify, and engage the right audiences at scale.', tags: ['NLP', 'AI', 'B2B', 'Lead Gen', "NestJS", "TypeORM", "PostgreSQL", "Python", "RabitMQ", "Redis"], link: 'https://audienceace.com', linkText: 'audienceace.com', num: '02' },
+                        { cat: 'E-Commerce', title: 'MetiBuy', desc: 'Premium multi-vendor marketplace with scalable serverless architecture, handling complex vendor management and payment flows.', tags: ['Serverless', 'E-Commerce', 'AWS', "HonoJS", "PrismaORM", "PostgreSQL", "TailwindCSS", "Redis", "Next.js"], link: 'https://metibuy.shop', linkText: 'metibuy.shop', num: '03' },
+                        { cat: 'Real Estate', title: 'Homiee Real Estate', desc: 'Platform handling 100+ active listings with AI-powered Q&A agents, video interaction panels, and streamlined UX for the Australian market.', tags: ['Next.js', 'OpenAI', 'Real Estate', "Express.js", "Mongoose", "MongoDB"], link: '#', linkText: 'Internal Project', num: '04' },
+                        { cat: 'Productivity', title: 'MeetingFlow', desc: 'AI productivity platform interface for meeting optimization, helping teams extract more value from every session. (Landing Page only)', tags: ['AI', 'Productivity', 'SaaS'], link: 'https://meetingflow.vercel.app', linkText: 'meetingflow.app', num: '05' },
+                        { cat: 'Microservices', title: 'GMB Reviews Dashboard', desc: 'Dashboard aggregating Google My Business data using Go microservices for real-time business intelligence and review insights.', tags: ['Golang', 'Microservices', 'Dashboard'], link: 'https://gmbrevs.com', linkText: 'gmbrevs.com', num: '06' },
+                    ].map((project) => (
+                        <div key={project.num} className="bg-[#0d0d0d] p-9 relative overflow-hidden transition-colors hover:bg-[#0d1a12] group">
+                            <div className="absolute top-0 left-0 right-0 h-[2px] bg-[#00ff88] scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></div>
+                            <div className="font-['JetBrains_Mono',monospace] text-[10px] text-[#00ff88] tracking-widest uppercase mb-3">
+                                {project.cat}
+                            </div>
+                            <div className="text-[22px] font-bold mb-3">{project.title}</div>
+                            <div className="text-[14px] text-[#888] leading-relaxed mb-6">
+                                {project.desc}
+                            </div>
+                            <div className="flex flex-wrap gap-1.5 mb-5">
+                                {project.tags.map(tag => (
+                                    <span key={tag} className="font-['JetBrains_Mono',monospace] text-[10px] tracking-widest px-2 py-0.5 border border-[#1a1a1a] text-[#888]">{tag}</span>
+                                ))}
+                            </div>
+                            <a href={project.link} target={project.link !== '#' ? "_blank" : undefined} rel="noreferrer" className="inline-flex items-center gap-1 font-['JetBrains_Mono',monospace] text-[12px] text-[#00ff88] tracking-widest hover:underline">
+                                {project.linkText} {project.link !== '#' && <ArrowRight size={12} />}
+                            </a>
+                            <div className="absolute bottom-6 right-6 font-['JetBrains_Mono',monospace] text-5xl font-bold text-[#1a1a1a]">
+                                {project.num}
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </section>
+
+            {/* CONTACT */}
+            <section id="contact" className="px-6 md:px-12 py-[60px] md:py-[100px] bg-[#0d0d0d]">
+                <div className="border border-[#1a1a1a] p-8 md:p-16 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
+                    <div>
+                        <div className="font-['JetBrains_Mono',monospace] text-xs text-[#00ff88] tracking-[3px] uppercase mb-4">
+              // 04 — Let&apos;s Talk
+                        </div>
+                        <div className="text-[clamp(28px,4vw,48px)] font-bold tracking-tight leading-tight mb-4">
+                            Open to new<br /><span className="text-[#00ff88]">opportunities</span>
+                        </div>
+                        <p className="text-[15px] text-[#888] leading-relaxed">
+                            I&apos;m currently available for full-time roles, contract work, and interesting projects. Remote-first, working across Australian, USA, and European time zones.
+                        </p>
+                    </div>
+                    <div className="flex flex-col gap-4">
+                        <a href="mailto:martin.codegene@gmail.com" className="flex items-center gap-4 p-5 md:p-6 border border-[#1a1a1a] hover:border-[#00ff88] group transition-colors">
+                            <Mail className="text-[#f0f0f0] group-hover:text-[#00ff88] transition-colors" size={20} strokeWidth={1.5} />
+                            <div>
+                                <div className="font-['JetBrains_Mono',monospace] text-[11px] text-[#555] tracking-widest uppercase mb-1">Email</div>
+                                <div className="text-sm text-[#f0f0f0] group-hover:text-[#00ff88] transition-colors">martin.codegene@gmail.com</div>
+                            </div>
+                        </a>
+                        <a href="tel:+260779699188" className="flex items-center gap-4 p-5 md:p-6 border border-[#1a1a1a] hover:border-[#00ff88] group transition-colors">
+                            <Phone className="text-[#f0f0f0] group-hover:text-[#00ff88] transition-colors" size={20} strokeWidth={1.5} />
+                            <div>
+                                <div className="font-['JetBrains_Mono',monospace] text-[11px] text-[#555] tracking-widest uppercase mb-1">Phone / WhatsApp</div>
+                                <div className="text-sm text-[#f0f0f0] group-hover:text-[#00ff88] transition-colors">+260 779 699 188</div>
+                            </div>
+                        </a>
+                        <a href="https://github.com/metina-platforms" target="_blank" rel="noreferrer" className="flex items-center gap-4 p-5 md:p-6 border border-[#1a1a1a] hover:border-[#00ff88] group transition-colors">
+                            <Github className="text-[#f0f0f0] group-hover:text-[#00ff88] transition-colors" size={20} strokeWidth={1.5} />
+                            <div>
+                                <div className="font-['JetBrains_Mono',monospace] text-[11px] text-[#555] tracking-widest uppercase mb-1">GitHub</div>
+                                <div className="text-sm text-[#f0f0f0] group-hover:text-[#00ff88] transition-colors">github.com/metina-platforms</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            {/* FOOTER */}
+            <footer className="px-6 md:px-12 py-8 border-t border-[#1a1a1a] flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0">
+                <div className="font-['JetBrains_Mono',monospace] text-xs text-[#555]">
+                    © 2026 Martin Tembo. All rights reserved.
+                </div>
+                <div className="flex items-center gap-2 text-xs text-[#00ff88]">
+                    <div className="w-2 h-2 rounded-full bg-[#00ff88] animate-pulse-slow"></div>
+                    Available for work
+                </div>
+            </footer>
+        </div>
+    );
+}
