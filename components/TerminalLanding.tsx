@@ -285,7 +285,7 @@ export default function TerminalLanding() {
   desc: 'A comprehensive dating application backend built with Django REST Framework, featuring a real-time WebSocket matching engine, GPS location radiuses, and WhatsApp-style chat.', 
   tags: ['Python', 'Django', 'WebSockets', 'PostgreSQL', 'Redis'], 
   link: 'https://play.google.com/store/apps/details?id=com.datadate.datingapp', 
-  linkText: 'github.com/dataDate', 
+  linkText: 'Google Play Store', 
   num: '07' 
 }
 
