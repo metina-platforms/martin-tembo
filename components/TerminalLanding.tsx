@@ -279,6 +279,16 @@ export default function TerminalLanding() {
                         { cat: 'Real Estate', title: 'Homiee Real Estate', desc: 'Platform handling 100+ active listings with AI-powered Q&A agents, video interaction panels, and streamlined UX for the Australian market.', tags: ['Next.js', 'OpenAI', 'Real Estate', "Express.js", "Mongoose", "MongoDB"], link: '#', linkText: 'Internal Project', num: '04' },
                         { cat: 'Productivity', title: 'MeetingFlow', desc: 'AI productivity platform interface for meeting optimization, helping teams extract more value from every session. (Landing Page only)', tags: ['AI', 'Productivity', 'SaaS'], link: 'https://meetingflow.vercel.app', linkText: 'meetingflow.app', num: '05' },
                         { cat: 'Microservices', title: 'GMB Reviews Dashboard', desc: 'Dashboard aggregating Google My Business data using Go microservices for real-time business intelligence and review insights.', tags: ['Golang', 'Microservices', 'Dashboard'], link: 'https://gmbrevs.com', linkText: 'gmbrevs.com', num: '06' },
+            { 
+  cat: 'Backend API', 
+  title: 'HeartLink (APP)', 
+  desc: 'A comprehensive dating application backend built with Django REST Framework, featuring a real-time WebSocket matching engine, GPS location radiuses, and WhatsApp-style chat.', 
+  tags: ['Python', 'Django', 'WebSockets', 'PostgreSQL', 'Redis'], 
+  link: 'https://play.google.com/store/apps/details?id=com.datadate.datingapp', 
+  linkText: 'github.com/dataDate', 
+  num: '07' 
+}
+
                     ].map((project) => (
                         <div key={project.num} className="bg-[#0d0d0d] p-9 relative overflow-hidden transition-colors hover:bg-[#0d1a12] group">
                             <div className="absolute top-0 left-0 right-0 h-[2px] bg-[#00ff88] scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></div>
